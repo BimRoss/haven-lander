@@ -241,6 +241,48 @@
   .pill { display: inline-block; padding: 3px 10px; border-radius: 99px; background: var(--bg-warm); color: var(--ink-soft); font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; }
 
   hr.rule { border: none; height: 1px; background: var(--line); margin: 36px 0; }
+
+  /* Wide diagrams: scroll horizontally on small screens rather than crush labels */
+  .scroll-x { margin: 0 -28px; padding: 0 28px; }
+  .scroll-x .inner { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .scroll-x .inner svg { display: block; }
+  @media (max-width: 720px) {
+    .scroll-x .inner svg { min-width: 720px; }
+  }
+
+  /* ===== MOBILE TUNING ===== */
+  @media (max-width: 640px) {
+    .hero { padding: 110px 0 60px; }
+    .hero h1 { font-size: clamp(36px, 10vw, 56px); margin-bottom: 22px; }
+    .hero .lede { font-size: 16px; margin-bottom: 32px; }
+    .hero .meta { gap: 22px; }
+    .hero .meta div b { font-size: 19px; }
+    .eyebrow { font-size: 10px; padding: 7px 12px; margin-bottom: 24px; }
+
+    section.s { padding: 64px 0; }
+    section.s h2 { font-size: clamp(30px, 7.5vw, 40px); margin-bottom: 16px; }
+    section.s .sub { font-size: 15.5px; margin-bottom: 36px; }
+    section.s .kicker { margin-bottom: 14px; }
+
+    .card { padding: 18px; border-radius: 12px; }
+    .scroll-x { margin: 0 -20px; padding: 0 20px; }
+
+    .stats { gap: 12px; margin-bottom: 36px; }
+    .stat { padding: 16px; }
+    .stat .n { font-size: 34px; }
+
+    .grid-2, .grid-3 { gap: 18px; }
+    .legend { gap: 14px 18px; font-size: 10.5px; }
+    .roster { gap: 12px; }
+    .roster .person { padding: 14px 16px; }
+
+    .outro { padding: 80px 0 70px; }
+    .outro h2 { font-size: clamp(28px, 7.5vw, 40px); margin-bottom: 22px; }
+    .outro p { font-size: 15px; }
+
+    footer .inner { font-size: 10px; flex-direction: column; align-items: flex-start; }
+    footer .inner div { line-height: 1.5; }
+  }
 </style>
 </head>
 <body>
@@ -289,6 +331,7 @@
 
     <div class="card">
       <!-- ===== FLOOR DIAGRAM SVG: 6 floors, ~16 units each = 96 (rounded), highlights Watch units ===== -->
+      <div class="scroll-x"><div class="inner">
       <svg class="block-svg" viewBox="0 0 1080 360" preserveAspectRatio="xMidYMid meet" aria-label="Floor diagram of Haven Apartments showing 97 units across 6 floors, with Neighborhood Watch units highlighted.">
         <defs>
           <linearGradient id="pool" x1="0" x2="1" y1="0" y2="1">
@@ -367,6 +410,7 @@
         <!-- caption box -->
         <text x="120" y="352" class="lbl">EAST ELEVATION · WASHINGTON BLVD FACING · 1 UNIT ≈ 58 px · NW = NEIGHBORHOOD WATCH</text>
       </svg>
+      </div></div>
 
       <script>
         // Render unit rectangles + highlight Watch units
@@ -605,6 +649,7 @@
     </p>
 
     <div class="card">
+      <div class="scroll-x"><div class="inner">
       <svg class="block-svg" viewBox="0 0 1080 360" aria-label="Hallway decibels across the day, weekdays vs weekends.">
         <text x="20" y="24" class="ttl">Hallway decibels (dBA), measured at the 3rd-floor elevator bank</text>
         <text x="20" y="40" class="lbl">Higher = louder · n = 142 evenings · perceived, not metered · methodology: vibes</text>
@@ -688,6 +733,7 @@
 
         <text x="60" y="350" class="lbl">SOURCE: SELF-REPORTED, NEIGHBORHOOD WATCH GROUP CHAT</text>
       </svg>
+      </div></div>
       <div class="caption"><b>FIG. 4</b> · The kids resolve around 8:15 PM, every night, like a tide.</div>
     </div>
   </div>
