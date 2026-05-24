@@ -83,7 +83,39 @@
   @media (max-width: 640px) { nav.top .links { display: none; } nav.top .inner { padding: 14px 36px; } }
 
   /* ===== HERO ===== */
-  .hero { padding: 170px 0 90px; position: relative; }
+  .hero { padding-top: 170px; padding-bottom: 90px; position: relative; }
+  .hero .stamp {
+    display: flex; align-items: baseline; gap: 14px;
+    font-family: 'JetBrains Mono', monospace; font-size: 10.5px;
+    color: var(--ink-faint); letter-spacing: 0.18em; text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+  .hero .stamp .no {
+    font-family: 'Fraunces', serif; font-style: italic; font-weight: 400;
+    font-size: 22px; color: var(--terra); letter-spacing: -0.01em;
+  }
+  .hero .stamp .rule {
+    flex: 1; height: 1px; background: var(--line); align-self: center;
+  }
+  .hero .meta-list {
+    border-top: 1px solid var(--line);
+    margin-top: 8px;
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    column-gap: 32px;
+  }
+  .hero .meta-list .row {
+    display: flex; flex-direction: column; gap: 4px;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .hero .meta-list .row .l {
+    font-family: 'JetBrains Mono', monospace; font-size: 10.5px;
+    color: var(--ink-dim); letter-spacing: 0.12em; text-transform: uppercase;
+  }
+  .hero .meta-list .row .v {
+    font-family: 'Fraunces', serif; font-weight: 500; font-size: 22px;
+    color: var(--ink); letter-spacing: -0.01em;
+  }
   .eyebrow {
     display: inline-flex; align-items: center; gap: 10px;
     font-family: 'JetBrains Mono', monospace; font-size: 11px;
@@ -252,11 +284,14 @@
 
   /* ===== MOBILE TUNING ===== */
   @media (max-width: 640px) {
-    .hero { padding: 110px 0 60px; }
-    .hero h1 { font-size: clamp(36px, 10vw, 56px); margin-bottom: 22px; }
-    .hero .lede { font-size: 16px; margin-bottom: 32px; }
-    .hero .meta { gap: 22px; }
-    .hero .meta div b { font-size: 19px; }
+    .hero { padding-top: 100px; padding-bottom: 56px; }
+    .hero h1 { font-size: clamp(32px, 9vw, 44px); margin-bottom: 20px; line-height: 1.05; }
+    .hero .lede { font-size: 15.5px; margin-bottom: 36px; }
+    .hero .stamp { margin-bottom: 14px; gap: 12px; }
+    .hero .stamp .no { font-size: 18px; }
+    .hero .meta-list { column-gap: 22px; }
+    .hero .meta-list .row { padding: 18px 0; }
+    .hero .meta-list .row .v { font-size: 18px; }
     .eyebrow { font-size: 10px; padding: 7px 12px; margin-bottom: 24px; }
 
     section.s { padding: 64px 0; }
@@ -300,16 +335,22 @@
 </nav>
 
 <header class="hero container">
-  <div class="eyebrow"><span class="pulse"></span>11924 W. Washington Blvd · Culver City · MMXX–</div>
+  <div class="stamp">
+    <span class="no">№ 01</span>
+    <span>Field Guide</span>
+    <span class="rule"></span>
+    <span>MMXX–</span>
+  </div>
+  <div class="eyebrow"><span class="pulse"></span>11924 W. Washington Blvd · Culver City</div>
   <h1>A field guide to <em>ninety-seven units</em>, one Airstream, and the Rodeway across the street.</h1>
   <p class="lede">
     Haven is a six-story stack of stucco and light on the south side of Washington, the kind of building that calls its pool deck <em>Reflect</em> and its rooftop <em>Vista</em>. We lived here. So did roughly a hundred strangers. About <strong>seven of them became Neighborhood Watch</strong>, the group chat that kept score on hallway decibels, Rodeway sightings, and which floor was, by consensus, the loudest.
   </p>
-  <div class="meta">
-    <div><span>Building</span><b>97 units · 6 floors</b></div>
-    <div><span>Year</span><b>Opened 2020</b></div>
-    <div><span>Across the street</span><b>Rodeway Inn, 32 rms</b></div>
-    <div><span>Neighborhood Watch</span><b>7 active · ∞ honorary</b></div>
+  <div class="meta-list">
+    <div class="row"><span class="l">Building</span><span class="v">97 units · 6 floors</span></div>
+    <div class="row"><span class="l">Year</span><span class="v">Opened 2020</span></div>
+    <div class="row"><span class="l">Across the street</span><span class="v">Rodeway Inn · 32 rms</span></div>
+    <div class="row"><span class="l">Neighborhood Watch</span><span class="v">7 active · ∞ honorary</span></div>
   </div>
 </header>
 
