@@ -3,12 +3,40 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Haven — A Field Guide to 11924 Washington</title>
-<meta name="description" content="A field guide to Haven Apartments in Culver City — 97 units, one Airstream, the Rodeway across the street, and the friends who called it Neighborhood Watch." />
-<meta property="og:title" content="Haven — A Field Guide to 11924 Washington" />
-<meta property="og:description" content="97 units. 6 floors. 1 Airstream on the roof. One Rodeway across the street. And the friends who called it Neighborhood Watch." />
+<title>haven — makeacompany.ai</title>
+<meta name="description" content="Haven — a field guide to 11924 Washington in Culver City. 97 units, 6 floors, one Airstream on the roof, the Rodeway across the street, and the friends who called it Neighborhood Watch." />
+<meta property="og:title" content="haven — makeacompany.ai" />
+<meta property="og:description" content="Haven — a field guide to 11924 Washington in Culver City. 97 units, 6 floors, one Airstream on the roof, the Rodeway across the street, and the friends who called it Neighborhood Watch." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://haven.makeacompany.ai" />
+<link rel="canonical" href="https://haven.makeacompany.ai" />
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-29N1GMQ3NE"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-29N1GMQ3NE');
+
+  // Synthetic health event: one non-interaction ping per browser session.
+  try {
+    var gaHealthKey = 'ga_health_ping_sent';
+    if (!sessionStorage.getItem(gaHealthKey)) {
+      var gaDebug = window.location.search.indexOf('ga_debug=1') !== -1;
+      gtag('event', 'ga_health_ping', {
+        event_category: 'observability',
+        event_label: 'frontend_boot',
+        non_interaction: true,
+        debug_mode: gaDebug
+      });
+      sessionStorage.setItem(gaHealthKey, '1');
+    }
+  } catch (err) {
+    // Ignore storage restrictions in private/locked-down browser contexts.
+  }
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
