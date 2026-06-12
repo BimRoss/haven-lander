@@ -57,3 +57,18 @@ jobs:
           platforms: linux/amd64
           cache-from: type=gha
           cache-to: type=gha,mode=max
+
+  gitops-release:
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: [build]
+    uses: BimRoss/.github/.github/workflows/gitops-release.yml@v1
+    secrets: inherit
+    with:
+      app_slug: haven
+      version: ${{ github.ref_name }}
+      target_env: ""
+      images: |
+        geeemoney/haven-lander
+      manifest_paths: |
+        admin/apps/haven/deployment.yaml
+      commit_subject: "release(haven): bump to ${{ github.ref_name }}"
